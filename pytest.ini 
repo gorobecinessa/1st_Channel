@@ -1,0 +1,9 @@
+# Конфиг pytest
+
+[pytest]
+pythonpath = .
+addopts = -v --browser chromium
+timeout = 30
+
+
+
