@@ -13,6 +13,16 @@ import pytest
 import config.settings as cfg
 from playwright.sync_api import Page
 
+# ЭТОТ БЛОК ВЫВОДИТ ИНФОРМАЦИЮ ОБ ОКРУЖЕНИИ ПРИ ЗАПУСКЕ
+def pytest_configure(config):
+    env = cfg.ENVIRONMENT.upper()
+    url = cfg.BASE_URL
+    print(f"\n{'='*50}")
+    print(f" ЗАПУСК ТЕСТОВ")
+    print(f"Окружение: {env}")
+    print(f"URL: {url}")
+    print(f"{'='*50}\n")
+
 @pytest.fixture(scope="session")
 def browser_context_args(browser_context_args):
     """Автоматически подключает auth_state.json, если файл существует"""

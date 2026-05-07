@@ -1,9 +1,14 @@
 # Конфиг pytest
 
 [pytest]
+markers =
+    smoke: базовые проверки стабильности
+    regression: полные сценарии
+    auth: тесты авторизации
 pythonpath = .
 addopts = -v --browser chromium
 timeout = 30
+
 
 
 
