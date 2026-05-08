@@ -14,7 +14,7 @@ class ShowsPage(BasePublicPage):
 
     def assert_main_slider_present(self):
         """Проверяет наличие главного слайдера с премьерой"""
-        expect(self.page.locator(ShowsPageLocators.MAIN_SLIDER)).to_be_visible(timeout=cfg.TIMEOUT)
+        expect(self.page.locator(ShowsPageLocators.MAIN_SLIDER).first).to_be_visible(timeout=cfg.TIMEOUT)
 
     def assert_sections_present(self):
         """Проверяет наличие основных секций"""

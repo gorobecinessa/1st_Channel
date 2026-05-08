@@ -4,8 +4,8 @@ class NewsPageLocators:
     PAGE_HEADING = "h1"  # "НОВОСТИ ПЕРВОГО КАНАЛА"
 
     # Кнопка "Смотреть выпуск" в главном выпуске
-    WATCH_LATEST_BUTTON = 'button[aria-label*="Смотреть"][aria-label*="Выпуск новостей"]'
-
+    # WATCH_LATEST_BUTTON = 'button[aria-label*="Смотреть"][aria-label*="Выпуск новостей"]'
+    WATCH_LATEST_BUTTON = 'button:has(span:has-text("смотреть выпуск"))'
     # Табы переключения
     TAB_NEWS_RELEASES = 'li[class*="Tabs_tab"][class*="Tabs_selected"]'  # "Выпуски новостей" (активный)
     TAB_ALL_NEWS = 'li[class*="Tabs_tab"]:has-text("Все новости")'
