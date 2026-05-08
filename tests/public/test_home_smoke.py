@@ -5,7 +5,6 @@ from pages.public.home_page import HomePage
 
 @pytest.mark.smoke
 class TestHomePageSmoke:
-    """Базовый смоук главной страницы 1tv.ru"""
 
     def test_home_loads_and_renders(self, page: Page):
         """

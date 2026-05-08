@@ -5,7 +5,6 @@ import config.settings as cfg
 
 
 class BasePublicPage:
-    """Базовый класс для всех публичных страниц"""
 
     def __init__(self, page: Page, relative_url: str):
         self.page = page
@@ -14,10 +13,9 @@ class BasePublicPage:
 
     def open(self):
         """Открывает страницу с полным URL и явным ожиданием"""
-        # 🔧 FIX: Собираем полный URL из BASE_URL + относительного пути
         full_url = f"{cfg.BASE_URL}{self.relative_url}"
         self.page.goto(full_url, wait_until="domcontentloaded", timeout=cfg.PAGE_LOAD_TIMEOUT)
-        # Ждём загрузки шапки (универсальный индикатор готовности страницы)
+        # Ждём загрузки шапки
         expect(self.page.locator("header")).to_be_visible(timeout=self.timeout)
 
     def assert_header_loaded(self):
@@ -30,7 +28,6 @@ class BasePublicPage:
 
     def assert_menu_links_present(self, min_count: int = 3):
         """Проверяет, что в меню есть ссылки"""
-        # Используем get_by_role для устойчивости к изменениям вёрстки
         links = self.page.get_by_role("link")
         assert links.count() >= min_count, f"Меню пустое: найдено {links.count()} ссылок"
 

@@ -4,13 +4,13 @@ class HomePageLocators:
     HEADER = "header"
     MAIN = "main"
 
-    # Навигация (используем get_by_role("link", name=...) в Page Object)
+    # Навигация
     NAV_LIVE = "ЭФИР"
     NAV_NEWS = "НОВОСТИ"
     NAV_SHOWS = "ШОУ"
     NAV_SCHEDULE = "ТЕЛЕПРОГРАММА"
 
-    # Заголовки контент-блоков (get_by_role("heading", name=...))
+    # Заголовки контент-блоков
     SECTION_NEWS = "ВЫПУСКИ НОВОСТЕЙ"
     SECTION_WATCHING = "СЕЙЧАС СМОТРЯТ"
 
@@ -18,4 +18,5 @@ class HomePageLocators:
     LIVE_HREF = "/live"
     NEWS_HREF = "/news/issue"
     SCHEDULE_HREF = "/schedule"
+
 

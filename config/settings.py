@@ -1,6 +1,5 @@
 # URL, таймауты, переменные окружения
 
-# config/settings.py
 import os
 from dotenv import load_dotenv
 
@@ -21,7 +20,7 @@ BASE_URL = os.getenv("BASE_URL", URLS.get(ENVIRONMENT, URLS["stage"]))
 PUBLIC_PAGES = {
     "home": "/",
     "live": "/live",
-    "news": "/news/issue",
+    "news_issue": "/news/issue",
     "shows": "/shows",
     "podcasts": "/podcasts",
     "movies": "/movies",

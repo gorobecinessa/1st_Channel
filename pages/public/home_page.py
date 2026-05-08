@@ -14,7 +14,6 @@ class HomePage(BasePublicPage):
         Проверяет, что плеер прямого эфира присутствует на странице.
         Не проверяем воспроизведение — только наличие элемента.
         """
-        # Ищем по комбинации: data-role + класс + iframe внутри
         player = self.page.locator(
             '[data-role="player"], .LivePlayerMainBlock_player__LgE_f, iframe[src*="eump"]'
         ).first
@@ -25,7 +24,7 @@ class HomePage(BasePublicPage):
         news_heading = self.page.get_by_role("heading", name="ВЫПУСКИ НОВОСТЕЙ")
         expect(news_heading).to_be_visible(timeout=cfg.TIMEOUT)
 
-        # Дополнительно: проверяем, что есть хотя бы одна новость
+        # Проверяем, что есть хотя бы одна новость
         news_items = self.page.locator('a[href*="/news/"]').all()
         assert len([el for el in news_items if el.is_visible()]) >= 1, "Нет видимых новостей"
 

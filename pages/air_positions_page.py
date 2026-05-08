@@ -1,7 +1,7 @@
 from playwright.sync_api import Page, expect
 from pages.base_page import BasePage
 from locators.air_positions import AirPositionsLocators
-import config.settings as cfg
+
 
 class AirPositionsPage(BasePage):
     def __init__(self, page: Page):
@@ -17,7 +17,6 @@ class AirPositionsPage(BasePage):
         # Регистрируем обработчик ДО клика
         self.page.on("dialog", lambda dialog: dialog.accept())
         self.click(AirPositionsLocators.SAVE_BTN)
-        # Явное ожидание вместо sleep: ждем появления блока ошибок
         expect(self.page.locator(AirPositionsLocators.ERROR_BLOCK)).to_be_visible(timeout=self.timeout)
 
     def assert_validation_errors(self):
